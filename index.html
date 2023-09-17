@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf‐8">
+	<title> Auto Keyboard </title>
+</head>
+
+<body>
+	<button id="sine">Sine</button>
+	<button id="sawtooth">Sawtooth</button>
+	<button id="triangle">Triangle</button>
+	<button id="square">Square</button>
+	<p>This keyboard was created by Ahmad Rawwagah</p>
+	<p>You can press keys on your keyboard to make sounds!</p>
+	<p>You can also upload a file with AhmadMusicCode in it to play it!</p>
+
+	<h2>Rules of AhmadMusicCode</h2>
+	<li>The first line of the code must be the tempo</li>
+	<li>Every subsequent line should contain comma seperated notes with a beat value at the end denoting how long the
+		note(s) should be held</l1>
+	<li>The allowed notes are C,C#,D,D#,E,F,F#,G,G#,A,A#,B in octaves 3 to 5. You must notate the selected octave by
+		adding the number to the end of the note</li>
+	<li>Rests are also allowed and are notated by the letter R</li>
+	<li>The possible beat values are 1/32 1/16 1/8 3/16 1/4 3/8 1/2 3/4 1</li>
+
+
+	<h3>Example Code</h3>
+	<p>120</p>
+	<p>F#4,D4,B3,1/8</p>
+	<p>R,1/8</p>
+	<p>A4,F#4,1/8</p>
+	<p>C#5,A4,1/8</p>
+
+</body>
+<script src="main.js"> </script>
+
+<div>
+	<label for="input-file">Upload Music:</label>
+	<input type="file" id="input-file">
+	<button id="example">Upload Example (Arranged by Rachel Ding BC '24)</button>
+</div>
+<br>
+<textarea readonly style="overflow:auto;resize:none;width:200px;height:100px;" id="content-target"></textarea>
+<br>
+<br>
+<button id="play">Play Upload</button>
+
+</html>
+
+</html>
