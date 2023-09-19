@@ -41,7 +41,7 @@ D5,F#4,D3,F#3,1/8`
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
     const globalGain = audioCtx.createGain();
-    globalGain.gain.setValueAtTime(0.6, audioCtx.currentTime)
+    globalGain.gain.setValueAtTime(0.8, audioCtx.currentTime)
     globalGain.connect(audioCtx.destination);
 
     const attack = 0.2;
@@ -168,7 +168,7 @@ D5,F#4,D3,F#3,1/8`
 
         const gainNode = audioCtx.createGain();
         gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
-        osc.connect(gainNode).connect(audioCtx.destination);
+        osc.connect(gainNode).connect(globalGain);
         osc.start();
         activeOscillators[key] = osc
         activeGainNodes[key] = gainNode
@@ -256,14 +256,14 @@ D5,F#4,D3,F#3,1/8`
             var notes = splitByLine[i].split(',')
             var beat = 60000 / tempo;
             var duration = beatMap[notes[notes.length - 1]] * beat;
-            console.log(duration)
+            //console.log(duration)
             for (var j = 0; j < notes.length - 1; j++) {
                 if (notes[j] == "R") {
                     var isRest = true;
                     break;
 
                 }
-                console.log(notes[j]);
+                //console.log(notes[j]);
                 playNote(noteIndexMap[notes[j]]);
             }
             await sleep(duration);
